@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Media;
 using System.Speech.Synthesis;
+using System.Windows.Forms;
 
 namespace PUBG_Mouse_Helper
 {
@@ -27,13 +19,18 @@ namespace PUBG_Mouse_Helper
                 WaitMs = waitMs;
                 DelayMs = delayMs;
             }
-            public Preset() { }
+
+            public Preset()
+            {
+            }
+
             public string PresetName { get; set; }
             public bool UserDefined { get; set; }
             public int Dx { get; set; }
             public int Dy { get; set; }
             public int WaitMs { get; set; }
             public int DelayMs { get; set; }
+
             public bool IsEmpty() => PresetName == null;
         }
 
@@ -51,13 +48,14 @@ namespace PUBG_Mouse_Helper
 
         private Poller poller;
 
-        ToolStripMenuItem userPresetsMenuItem;
+        private ToolStripMenuItem userPresetsMenuItem;
 
         private int presetSwitchHotkeyIndex = 0;
 
         public Form1()
         {
             InitializeComponent();
+
             trackBar1.Scroll += OnTrackBarScroll;
             trackBar2.Scroll += OnTrackBarScroll;
             trackBar3.Scroll += OnTrackBarScroll;
@@ -66,6 +64,7 @@ namespace PUBG_Mouse_Helper
         }
 
         #region Interface methods
+
         public void OnOkButtonPressed(string presetName)
         {
             try
@@ -83,8 +82,6 @@ namespace PUBG_Mouse_Helper
             {
                 toolStripStatusLabel1.Text = $"Failed to save preset {presetName}";
             }
-
-
         }
 
         public void OnPresetSwitchHotkeyPressed()
@@ -155,18 +152,17 @@ namespace PUBG_Mouse_Helper
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             toolStripMenuItemEnableAntiRecoil.PerformClick();
-            
+
             //new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
             //Console.Beep(400, 500);
             if (toolStripMenuItemEnableAntiRecoil.Checked)
-            {                
+            {
                 synth.SpeakAsync("On");
             }
             else
             {
                 synth.SpeakAsync("Off");
             }
-                
         }
 
         public void OnFastLootPressed() //[XButton1]
@@ -179,8 +175,7 @@ namespace PUBG_Mouse_Helper
             MouseHelperClass.Rapidfire();
         }
 
-        #endregion
-
+        #endregion Interface methods
 
         private void OnCurrentPresetChanged()
         {
@@ -235,8 +230,6 @@ namespace PUBG_Mouse_Helper
             poller.Poll(trackBar1.Value, trackBar2.Value, (uint)trackBar3.Value);
             toolStripStatusLabel1.Text = $"Monitoring Active : (dx={trackBar1.Value}, dy={trackBar2.Value}, WaitMs={trackBar3.Value}, DelayMs={trackBar4.Value})";
             notifyIcon1.Text = toolStripStatusLabel1.Text;
-
-            
         }
 
         private void toolStripMenuItem10_Click(object sender, EventArgs e)
@@ -252,6 +245,7 @@ namespace PUBG_Mouse_Helper
             toolStripMenuItemActivate.Enabled = true;
             toolStripMenuItemStop.Enabled = false;
         }
+
         //WEAPON PRESETS
         private void toolStripMenuItem2_Click(object sender, EventArgs e) //0 Default
         {
@@ -309,8 +303,6 @@ namespace PUBG_Mouse_Helper
             notifyIcon1.Visible = false;
         }
 
-
-
         private void toolStripMenuItemExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -352,15 +344,12 @@ namespace PUBG_Mouse_Helper
                 {
                     toolStripStatusLabel1.Text = $"Preset {presetName} not found";
                 }
-
             }
             catch (Exception ex)
             {
                 Debug.Print(ex.Message);
             }
         }
-
-
 
         private void toolStripMenuItemDeletePreset_Click(object sender, EventArgs e)
         {
@@ -384,7 +373,6 @@ namespace PUBG_Mouse_Helper
                 {
                     toolStripStatusLabel1.Text = ex.Message;
                 }
-
             }
         }
 
@@ -405,7 +393,6 @@ namespace PUBG_Mouse_Helper
                         userPresetsMenuItem.DropDownItems.Add(newPreset);
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -420,18 +407,15 @@ namespace PUBG_Mouse_Helper
 
         private void toolStripMenuItemInstructions_Click(object sender, EventArgs e)
         {
-
             string instructionMsg = @"
 [TIPS]
-
 Run as Administrator!
 All PUBG Weapons tested at 100m Ironsights
 
 [CONTROLS]
-
 CHANGE_PRESET -> ENTER
 RECOIL_CORRECTION_PARAMETERS -> ARROW KEYS
-TOGGLE_ON_OFF -> F7 
+TOGGLE_ON_OFF -> F7
 AUTO_LOOT > XButton1 (Mouse)";
 
             MessageBox.Show(instructionMsg, "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -455,7 +439,6 @@ AUTO_LOOT > XButton1 (Mouse)";
         private void toolStripMenuItemEnableAntiRecoil_Click(object sender, EventArgs e)
         {
             this.poller.PerformRecoilCompensation = toolStripMenuItemEnableAntiRecoil.Checked;
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -463,7 +446,8 @@ AUTO_LOOT > XButton1 (Mouse)";
             new SavePresetAsDialog(this).Show();
         }
 
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
-
-
 }

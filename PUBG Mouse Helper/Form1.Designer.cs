@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkRapidfire = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -107,13 +107,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chkRapidfire);
             this.groupBox1.Location = new System.Drawing.Point(15, 196);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(129, 73);
+            this.groupBox1.Size = new System.Drawing.Size(192, 73);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Options:";
+            this.groupBox1.Text = "Options: (WORK IN PROGRESS)";
             // 
             // checkBox2
             // 
@@ -125,21 +125,21 @@
             this.checkBox2.Text = "Randomize?";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkRapidfire
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(74, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Rapidfire?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkRapidfire.AutoSize = true;
+            this.chkRapidfire.Location = new System.Drawing.Point(6, 19);
+            this.chkRapidfire.Name = "chkRapidfire";
+            this.chkRapidfire.Size = new System.Drawing.Size(74, 17);
+            this.chkRapidfire.TabIndex = 9;
+            this.chkRapidfire.Text = "Rapidfire?";
+            this.chkRapidfire.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(162, 209);
+            this.button1.Location = new System.Drawing.Point(433, 182);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(65, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "Save...";
             this.button1.UseVisualStyleBackColor = true;
@@ -374,33 +374,33 @@
             this.toolStripMenuItemEnableAntiRecoil.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItemEnableAntiRecoil.Name = "toolStripMenuItemEnableAntiRecoil";
             this.toolStripMenuItemEnableAntiRecoil.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.toolStripMenuItemEnableAntiRecoil.Size = new System.Drawing.Size(149, 22);
+            this.toolStripMenuItemEnableAntiRecoil.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemEnableAntiRecoil.Text = "Anti-recoil";
             this.toolStripMenuItemEnableAntiRecoil.Click += new System.EventHandler(this.toolStripMenuItemEnableAntiRecoil_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripMenuItemActivate
             // 
             this.toolStripMenuItemActivate.Name = "toolStripMenuItemActivate";
-            this.toolStripMenuItemActivate.Size = new System.Drawing.Size(149, 22);
+            this.toolStripMenuItemActivate.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemActivate.Text = "Activate";
             this.toolStripMenuItemActivate.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
             // toolStripMenuItemStop
             // 
             this.toolStripMenuItemStop.Name = "toolStripMenuItemStop";
-            this.toolStripMenuItemStop.Size = new System.Drawing.Size(149, 22);
+            this.toolStripMenuItemStop.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemStop.Text = "Stop";
             this.toolStripMenuItemStop.Click += new System.EventHandler(this.toolStripMenuItem10_Click);
             // 
             // trayToolStripMenuItem
             // 
             this.trayToolStripMenuItem.Name = "trayToolStripMenuItem";
-            this.trayToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.trayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.trayToolStripMenuItem.Text = "Tray";
             this.trayToolStripMenuItem.Click += new System.EventHandler(this.trayToolStripMenuItem_Click);
             // 
@@ -474,7 +474,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 368);
+            this.ClientSize = new System.Drawing.Size(518, 355);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -543,7 +543,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkRapidfire;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBox2;

@@ -12,6 +12,8 @@ namespace Pluto
 {
     public partial class LoginForm : Form
     {
+        public bool IsUserAuthenticated { get; set; }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -21,13 +23,16 @@ namespace Pluto
         {
             if (textBox1.Text == "123" && maskedTextBox1.Text == "123")
             {
-                PUBG_Mouse_Helper.Form1 login = new PUBG_Mouse_Helper.Form1();
-                login.ShowDialog();
+                IsUserAuthenticated = true;
+                PUBG_Mouse_Helper.Form1 form1 = new PUBG_Mouse_Helper.Form1();
+                form1.ShowDialog();
                
                 this.Hide();
             }
             else
             {
+                IsUserAuthenticated = false;
+
                 for (int i = 0; i < 5; i++)
                 {
                     this.Left += 5;

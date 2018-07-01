@@ -462,6 +462,7 @@ AUTO_LOOT > XButton1 (Mouse)";
         {
             new SavePresetAsDialog(this).Show();
         }
+
     }
 
 

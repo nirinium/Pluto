@@ -13,6 +13,7 @@ namespace PUBG_Mouse_Helper
     {
         [DllImport("user32.dll")]
         static extern void mouse_event(uint dwFlags, int dx, int dy, uint dwData, UIntPtr dwExtraInfo);
+
         const uint MOUSEEVENTF_LEFTDOWN = 0x02;
         const uint MOUSEEVENTF_LEFTUP = 0x04;
         const uint MOUSEEVENTF_RIGHTDOWN = 0x08;
@@ -68,14 +69,16 @@ namespace PUBG_Mouse_Helper
         }
         public static void Rapidfire() // CONTROLLED IN Poller.cs [XButton2]
         {
-
             Console.WriteLine("Rapidfire!");
             for (int i = 0; i < 10; i++)
             {
+                int[] x = new int[] { };
+                int[] y = { 1, 1, 2, 2 };
+
                 LeftClickUp();
                 LeftClickDown();
                 Thread.Sleep(2);
-                mouse_event(MOUSEEVENTF_MOVE, 0, 4, 0, UIntPtr.Zero);
+                mouse_event(MOUSEEVENTF_MOVE, 0, 0, 0, UIntPtr.Zero);
                 LeftClickUp();
                 //mouse_event(MOUSEEVENTF_MOVE, -600, 0, 0, UIntPtr.Zero);
             }

@@ -38,23 +38,23 @@
             // 
             this.textBoxPresetName.Location = new System.Drawing.Point(12, 12);
             this.textBoxPresetName.Name = "textBoxPresetName";
-            this.textBoxPresetName.Size = new System.Drawing.Size(243, 20);
+            this.textBoxPresetName.Size = new System.Drawing.Size(245, 20);
             this.textBoxPresetName.TabIndex = 0;
             this.textBoxPresetName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPresetName_KeyDown);
             // 
             // buttonOkSave
             // 
-            this.buttonOkSave.Location = new System.Drawing.Point(44, 38);
+            this.buttonOkSave.Location = new System.Drawing.Point(58, 38);
             this.buttonOkSave.Name = "buttonOkSave";
             this.buttonOkSave.Size = new System.Drawing.Size(75, 23);
             this.buttonOkSave.TabIndex = 1;
-            this.buttonOkSave.Text = "Ok";
+            this.buttonOkSave.Text = "OK";
             this.buttonOkSave.UseVisualStyleBackColor = true;
             this.buttonOkSave.Click += new System.EventHandler(this.buttonOkSave_Click);
             // 
             // buttonCancelSave
             // 
-            this.buttonCancelSave.Location = new System.Drawing.Point(151, 38);
+            this.buttonCancelSave.Location = new System.Drawing.Point(139, 38);
             this.buttonCancelSave.Name = "buttonCancelSave";
             this.buttonCancelSave.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelSave.TabIndex = 2;

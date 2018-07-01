@@ -128,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pluto.ico" />
-    <Content Include="pubg.ico" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>

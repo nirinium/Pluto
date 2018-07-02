@@ -305,7 +305,7 @@ namespace PUBG_Mouse_Helper
 
         private void toolStripMenuItemExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.ExitThread();
         }
 
         private void toolStripMenuItemSaveAsPreset_Click(object sender, EventArgs e)
@@ -449,6 +449,22 @@ AUTO_LOOT > XButton1 (Mouse)";
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        }
+
+        private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pluto.User.UserPrefs userPrefs = new Pluto.User.UserPrefs();
+            userPrefs.Show();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

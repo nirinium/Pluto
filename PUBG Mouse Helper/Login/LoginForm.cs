@@ -18,6 +18,7 @@ namespace Pluto
         public LoginForm()
         {
             InitializeComponent();
+            maskedTextBox1.Text = Properties.UserPrefs.Default.UserPassword;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,6 +27,13 @@ namespace Pluto
             if (textBox1.Text == "rf" && maskedTextBox1.Text == "qwerty")
             {
                 IsUserAuthenticated = true;
+
+                if (checkBox1.Checked)
+                {
+                    Properties.UserPrefs.Default.UserPassword = maskedTextBox1.Text;
+                    Properties.UserPrefs.Default.Save();
+                }
+
                 PUBG_Mouse_Helper.Form1 form1 = new PUBG_Mouse_Helper.Form1();
                 form1.Show();
 
@@ -51,6 +59,19 @@ namespace Pluto
         private void textBox1_Click(object sender, EventArgs e)
         {
             //textBox1.Clear();
+        }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) //if enter pressed then login
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

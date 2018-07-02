@@ -39,6 +39,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -109,6 +111,17 @@
       <DependentUpon>SavePresetAsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Properties\UserPrefs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserPrefs.settings</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserPrefs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\UserPrefs.Designer.cs">
+      <DependentUpon>UserPrefs.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -137,6 +150,9 @@
       <DependentUpon>SavePresetAsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\UserPrefs.resx">
+      <DependentUpon>UserPrefs.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,11 +163,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Properties\UserPrefs.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserPrefs.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\appicon.bmp" />
+    <None Include="Resources\Icon1.ico" />
     <Content Include="Resources\pluto.ico" />
   </ItemGroup>
   <ItemGroup>

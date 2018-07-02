@@ -402,7 +402,7 @@ namespace PUBG_Mouse_Helper
 
         private void toolStripMenuItemAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("NTG:Ridgefire\n2018", HelperFunctions.GetApplicationName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Designed By: Nirinium \nNTG:Ridgefire (c) 2018", HelperFunctions.GetApplicationName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void toolStripMenuItemInstructions_Click(object sender, EventArgs e)
@@ -410,12 +410,13 @@ namespace PUBG_Mouse_Helper
             string instructionMsg = @"
 [TIPS]
 Run as Administrator!
-All PUBG Weapons tested at 100m Ironsights
+IMPORTANT -> You must click Activate in menu to enable!
 
 [CONTROLS]
 CHANGE_PRESET -> ENTER
 RECOIL_CORRECTION_PARAMETERS -> ARROW KEYS
 TOGGLE_ON_OFF -> F7
+RAPIDFIRE (EXPERIMENTAL) > XButton2 (Mouse)
 AUTO_LOOT > XButton1 (Mouse)";
 
             MessageBox.Show(instructionMsg, "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -46,9 +46,10 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(12, 11);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Username...";
+            this.textBox1.Text = "rf";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // button1
@@ -73,7 +74,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login:";
+            this.Text = "Login to Pluto!";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();

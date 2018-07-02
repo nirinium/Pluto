@@ -118,6 +118,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
             this.checkBox2.Location = new System.Drawing.Point(6, 43);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(85, 17);
@@ -128,6 +129,7 @@
             // chkRapidfire
             // 
             this.chkRapidfire.AutoSize = true;
+            this.chkRapidfire.Enabled = false;
             this.chkRapidfire.Location = new System.Drawing.Point(6, 19);
             this.chkRapidfire.Name = "chkRapidfire";
             this.chkRapidfire.Size = new System.Drawing.Size(74, 17);
@@ -316,42 +318,42 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "None";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "AKM";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem4.Text = "M4A1";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem5.Text = "Scar";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem6.Text = "SKS";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem7.Text = "MK14";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
@@ -374,33 +376,33 @@
             this.toolStripMenuItemEnableAntiRecoil.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItemEnableAntiRecoil.Name = "toolStripMenuItemEnableAntiRecoil";
             this.toolStripMenuItemEnableAntiRecoil.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.toolStripMenuItemEnableAntiRecoil.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemEnableAntiRecoil.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItemEnableAntiRecoil.Text = "Anti-recoil";
             this.toolStripMenuItemEnableAntiRecoil.Click += new System.EventHandler(this.toolStripMenuItemEnableAntiRecoil_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(146, 6);
             // 
             // toolStripMenuItemActivate
             // 
             this.toolStripMenuItemActivate.Name = "toolStripMenuItemActivate";
-            this.toolStripMenuItemActivate.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemActivate.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItemActivate.Text = "Activate";
             this.toolStripMenuItemActivate.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
             // toolStripMenuItemStop
             // 
             this.toolStripMenuItemStop.Name = "toolStripMenuItemStop";
-            this.toolStripMenuItemStop.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemStop.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItemStop.Text = "Stop";
             this.toolStripMenuItemStop.Click += new System.EventHandler(this.toolStripMenuItem10_Click);
             // 
             // trayToolStripMenuItem
             // 
             this.trayToolStripMenuItem.Name = "trayToolStripMenuItem";
-            this.trayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trayToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.trayToolStripMenuItem.Text = "Tray";
             this.trayToolStripMenuItem.Click += new System.EventHandler(this.trayToolStripMenuItem_Click);
             // 

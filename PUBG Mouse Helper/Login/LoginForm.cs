@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace Pluto
 {
@@ -21,12 +22,13 @@ namespace Pluto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "123" && maskedTextBox1.Text == "123")
+
+            if (textBox1.Text == "rf" && maskedTextBox1.Text == "qwerty")
             {
                 IsUserAuthenticated = true;
                 PUBG_Mouse_Helper.Form1 form1 = new PUBG_Mouse_Helper.Form1();
-                form1.ShowDialog();
-               
+                form1.Show();
+
                 this.Hide();
             }
             else
@@ -39,15 +41,18 @@ namespace Pluto
                     System.Threading.Thread.Sleep(25);
                     this.Left -= 5;
                     System.Threading.Thread.Sleep(25);
-                    
+
                 }
             }
-            
+
         }
+
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
+            //textBox1.Clear();
         }
     }
 }
+
+

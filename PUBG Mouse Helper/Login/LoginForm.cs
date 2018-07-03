@@ -73,6 +73,11 @@ namespace Pluto
         {
             this.Dispose();
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

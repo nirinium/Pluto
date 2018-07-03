@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Speech.Synthesis;
 using System.Windows.Forms;
+using System.Data;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace PUBG_Mouse_Helper
 {
@@ -152,9 +155,12 @@ namespace PUBG_Mouse_Helper
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
             toolStripMenuItemEnableAntiRecoil.PerformClick();
-
+            string enabledOrDisabled = toolStripMenuItemEnableAntiRecoil.Checked ? "enable" : "disable";
+            string enabledOrDisabledANTI = !toolStripMenuItemEnableAntiRecoil.Checked ? "enable" : "disable";
+            new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
             //new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
             //Console.Beep(400, 500);
+            /* 
             if (toolStripMenuItemEnableAntiRecoil.Checked)
             {
                 synth.SpeakAsync("On");
@@ -162,7 +168,8 @@ namespace PUBG_Mouse_Helper
             else
             {
                 synth.SpeakAsync("Off");
-            }
+            }*/
+            
         }
 
         public void OnFastLootPressed() //[XButton1]
@@ -442,29 +449,30 @@ AUTO_LOOT > XButton1 (Mouse)";
             this.poller.PerformRecoilCompensation = toolStripMenuItemEnableAntiRecoil.Checked;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new SavePresetAsDialog(this).Show();
-        }
-
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
 
         private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pluto.User.UserPrefs userPrefs = new Pluto.User.UserPrefs();
-            userPrefs.Show();
-        }
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
+            //Pluto.User.UserPrefs userPrefs = new Pluto.User.UserPrefs();
+            //
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pluto.Testing.MySQLForm mySQLForm = new Pluto.Testing.MySQLForm();
+            mySQLForm.Show();
         }
     }
 }

@@ -34,5 +34,17 @@ namespace Pluto.Properties {
                 this["UserPassword"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DisableSound {
+            get {
+                return ((bool)(this["DisableSound"]));
+            }
+            set {
+                this["DisableSound"] = value;
+            }
+        }
     }
 }

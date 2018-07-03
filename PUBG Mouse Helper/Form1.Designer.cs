@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.chkRapidfire = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.trackBar4 = new System.Windows.Forms.TrackBar();
@@ -44,6 +41,9 @@
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.chkRapidfire = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSaveAsPreset = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +62,6 @@
             this.toolStripMenuItemActivate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemStop = new System.Windows.Forms.ToolStripMenuItem();
             this.trayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemInstructions = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,27 +71,24 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.statusStrip1);
             this.panel1.Controls.Add(this.trackBar4);
             this.panel1.Controls.Add(this.label4);
@@ -105,14 +101,125 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 510);
+            this.panel1.Size = new System.Drawing.Size(577, 377);
             this.panel1.TabIndex = 0;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 355);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(577, 22);
+            this.statusStrip1.TabIndex = 8;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel1.Text = "Ready";
+            // 
+            // trackBar4
+            // 
+            this.trackBar4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar4.BackColor = System.Drawing.SystemColors.Menu;
+            this.trackBar4.Location = new System.Drawing.Point(71, 304);
+            this.trackBar4.Maximum = 1000;
+            this.trackBar4.Minimum = 6;
+            this.trackBar4.Name = "trackBar4";
+            this.trackBar4.Size = new System.Drawing.Size(495, 45);
+            this.trackBar4.TabIndex = 6;
+            this.trackBar4.TickFrequency = 10;
+            this.trackBar4.Value = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(2, 304);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Delay (ms)";
+            this.toolTip1.SetToolTip(this.label4, "Delay in milliseconds between consecutive shots");
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar3.BackColor = System.Drawing.SystemColors.Menu;
+            this.trackBar3.Location = new System.Drawing.Point(71, 261);
+            this.trackBar3.Maximum = 100;
+            this.trackBar3.Minimum = 1;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(495, 45);
+            this.trackBar3.TabIndex = 4;
+            this.trackBar3.TickFrequency = 2;
+            this.trackBar3.Value = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 261);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Wait (ms)";
+            this.toolTip1.SetToolTip(this.label3, "Wait time in milliseconds between mouse subsequent mouse moves for recoil correct" +
+        "ion");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 216);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Y (Vert)";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar2.BackColor = System.Drawing.SystemColors.Menu;
+            this.trackBar2.Location = new System.Drawing.Point(71, 216);
+            this.trackBar2.Maximum = 100;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(495, 45);
+            this.trackBar2.TabIndex = 1;
+            this.trackBar2.TickFrequency = 2;
+            this.trackBar2.Value = 30;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar1.BackColor = System.Drawing.SystemColors.Menu;
+            this.trackBar1.Location = new System.Drawing.Point(71, 172);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(495, 45);
+            this.trackBar1.TabIndex = 1;
+            this.trackBar1.TickFrequency = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 172);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "X (Hor)";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.chkRapidfire);
-            this.groupBox1.Location = new System.Drawing.Point(8, 394);
+            this.groupBox1.Location = new System.Drawing.Point(8, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(95, 73);
             this.groupBox1.TabIndex = 11;
@@ -141,119 +248,9 @@
             this.chkRapidfire.Text = "Rapidfire?";
             this.chkRapidfire.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 488);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(469, 22);
-            this.statusStrip1.TabIndex = 8;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel1.Text = "Ready";
-            // 
-            // trackBar4
-            // 
-            this.trackBar4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar4.BackColor = System.Drawing.SystemColors.Window;
-            this.trackBar4.Location = new System.Drawing.Point(73, 343);
-            this.trackBar4.Maximum = 1000;
-            this.trackBar4.Minimum = 6;
-            this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(383, 45);
-            this.trackBar4.TabIndex = 6;
-            this.trackBar4.TickFrequency = 10;
-            this.trackBar4.Value = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 343);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Delay (ms)";
-            this.toolTip1.SetToolTip(this.label4, "Delay in milliseconds between consecutive shots");
-            // 
-            // trackBar3
-            // 
-            this.trackBar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar3.BackColor = System.Drawing.SystemColors.Window;
-            this.trackBar3.Location = new System.Drawing.Point(73, 300);
-            this.trackBar3.Maximum = 100;
-            this.trackBar3.Minimum = 1;
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(383, 45);
-            this.trackBar3.TabIndex = 4;
-            this.trackBar3.TickFrequency = 2;
-            this.trackBar3.Value = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 300);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Wait (ms)";
-            this.toolTip1.SetToolTip(this.label3, "Wait time in milliseconds between mouse subsequent mouse moves for recoil correct" +
-        "ion");
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 255);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Y (Vert)";
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar2.BackColor = System.Drawing.SystemColors.Window;
-            this.trackBar2.Location = new System.Drawing.Point(73, 255);
-            this.trackBar2.Maximum = 100;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(383, 45);
-            this.trackBar2.TabIndex = 1;
-            this.trackBar2.TickFrequency = 2;
-            this.trackBar2.Value = 30;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar1.BackColor = System.Drawing.SystemColors.Window;
-            this.trackBar1.Location = new System.Drawing.Point(73, 211);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(383, 45);
-            this.trackBar1.TabIndex = 1;
-            this.trackBar1.TickFrequency = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 212);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "X (Hor)";
-            // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Silver;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFile,
             this.toolStripMenuItemPresets,
@@ -262,7 +259,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(483, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(614, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -361,8 +358,7 @@
             this.toolStripSeparator1,
             this.toolStripMenuItemActivate,
             this.toolStripMenuItemStop,
-            this.trayToolStripMenuItem,
-            this.preferencesToolStripMenuItem});
+            this.trayToolStripMenuItem});
             this.toolStripMenuItemEdit.Name = "toolStripMenuItemEdit";
             this.toolStripMenuItemEdit.Size = new System.Drawing.Size(39, 20);
             this.toolStripMenuItemEdit.Text = "Edit";
@@ -404,13 +400,6 @@
             this.trayToolStripMenuItem.Text = "Tray";
             this.trayToolStripMenuItem.Click += new System.EventHandler(this.trayToolStripMenuItem_Click);
             // 
-            // preferencesToolStripMenuItem
-            // 
-            this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.preferencesToolStripMenuItem.Text = "Preferences";
-            this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -447,56 +436,52 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ItemSize = new System.Drawing.Size(20, 20);
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(483, 542);
+            this.tabControl1.Size = new System.Drawing.Size(615, 395);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(24, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(475, 516);
+            this.tabPage1.Size = new System.Drawing.Size(587, 387);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Weapon";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.webBrowser1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage2.Location = new System.Drawing.Point(24, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(475, 516);
+            this.tabPage2.Size = new System.Drawing.Size(587, 387);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Graphing";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(469, 510);
-            this.webBrowser1.TabIndex = 0;
             // 
             // tabPage3
             // 
+            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(24, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(475, 516);
+            this.tabPage3.Size = new System.Drawing.Size(587, 387);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Admin";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -513,7 +498,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 566);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(614, 419);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -527,19 +513,18 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -589,8 +574,6 @@
         private System.Windows.Forms.CheckBox chkRapidfire;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
     }

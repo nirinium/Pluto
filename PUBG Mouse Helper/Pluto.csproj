@@ -127,12 +127,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>UserPrefs.settings</DependentUpon>
     </Compile>
-    <Compile Include="Testing\MySQLForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Testing\MySQLForm.Designer.cs">
-      <DependentUpon>MySQLForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="User\UserPrefs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,9 +166,6 @@
     <EmbeddedResource Include="SavePresetAsDialog.resx">
       <DependentUpon>SavePresetAsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Testing\MySQLForm.resx">
-      <DependentUpon>MySQLForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserPrefs.resx">
       <DependentUpon>UserPrefs.cs</DependentUpon>
@@ -227,6 +218,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Testing\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

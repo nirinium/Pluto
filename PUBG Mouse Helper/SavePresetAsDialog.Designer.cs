@@ -70,11 +70,11 @@
             this.Controls.Add(this.buttonCancelSave);
             this.Controls.Add(this.buttonOkSave);
             this.Controls.Add(this.textBoxPresetName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SavePresetAsDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Enter preset name";
+            this.Text = "Save Preset";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();

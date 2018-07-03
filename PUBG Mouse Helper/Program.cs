@@ -16,7 +16,14 @@ namespace PUBG_Mouse_Helper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Pluto.Login.LoginForm login = new Pluto.Login.LoginForm();
+
+            Application.Run(login);
+            if (login.Success)
+            {
+                Application.Run(new Form1());
+            }
         }
     }
 }

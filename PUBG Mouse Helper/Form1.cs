@@ -157,18 +157,18 @@ namespace PUBG_Mouse_Helper
             toolStripMenuItemEnableAntiRecoil.PerformClick();
             string enabledOrDisabled = toolStripMenuItemEnableAntiRecoil.Checked ? "enable" : "disable";
             string enabledOrDisabledANTI = !toolStripMenuItemEnableAntiRecoil.Checked ? "enable" : "disable";
-            new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
+            //new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
             //new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
             //Console.Beep(400, 500);
-            /* 
-            if (toolStripMenuItemEnableAntiRecoil.Checked)
-            {
-                synth.SpeakAsync("On");
-            }
-            else
-            {
-                synth.SpeakAsync("Off");
-            }*/
+             
+            //if (toolStripMenuItemEnableAntiRecoil.Checked)
+            //{
+            //    synth.SpeakAsync(trackBar2.Location.ToString());
+            //}
+            //else
+            //{
+            //    synth.SpeakAsync("Off");
+            //}
             
         }
 
@@ -471,8 +471,8 @@ AUTO_LOOT > XButton1 (Mouse)";
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Pluto.Testing.MySQLForm mySQLForm = new Pluto.Testing.MySQLForm();
-            mySQLForm.Show();
+            //Pluto.Testing.MySQLForm mySQLForm = new Pluto.Testing.MySQLForm();
+            //mySQLForm.Show();
         }
     }
 }

@@ -50,6 +50,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(162, 22);
             this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "rf";
             // 
             // textBox2
             // 
@@ -61,6 +62,7 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(162, 22);
             this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "rf";
             // 
             // button1
             // 
@@ -113,7 +115,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 153);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(325, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(315, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -125,7 +127,8 @@
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.LimeGreen;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
             this.toolStripStatusLabel1.Text = "STATUS";
@@ -136,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(325, 175);
+            this.ClientSize = new System.Drawing.Size(315, 175);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);

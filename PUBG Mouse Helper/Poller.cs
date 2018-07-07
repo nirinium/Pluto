@@ -6,12 +6,15 @@ namespace PUBG_Mouse_Helper
     public class Poller
     {
         private IOnHotkeyPressed onHotkeyPressed;
+
         public Poller(IOnHotkeyPressed onHotkeyPressed)
         {
             this.onHotkeyPressed = onHotkeyPressed;
         }
 
         public bool PerformRecoilCompensation { get; set; } = true;
+        public bool PerformRapidfire { get; set; } = true;
+
         public void Poll(int dx, int dy, uint sleep)
         {
             PollMButton(dx, dy, sleep);
@@ -21,15 +24,24 @@ namespace PUBG_Mouse_Helper
                 PollTrackbarValuesChangeHotkey();
             }
             PollToggleRecoilCompensationHotkey();
+            //PollFastLoot();
+            //PollRapidfire();
+        }
+
+        //TEST
+        public void Poll_ExtraFunctions()
+        {
             PollFastLoot();
             PollRapidfire();
         }
 
         [DllImport("user32.dll")]
         private static extern short GetAsyncKeyState(System.Windows.Forms.Keys vKey);
+
         private void PollFastLoot()
         {
             short gaks = GetAsyncKeyState(Keys.XButton1);
+            
             if ((gaks & 0b10000000_00000000) > 0)//if FastLoot was pressed and held
             {
                 HelperFunctions.WaitUntilTimeoutWhileTrue(() => (GetAsyncKeyState(Keys.XButton1) & 0b10000000_00000000) > 0, 100); //wait until F7 arrow key is released without timeout of 100ms
@@ -44,12 +56,13 @@ namespace PUBG_Mouse_Helper
             {
                 //Could add rapidfire here -- have to use KEYBD_EVENT
                 //MouseHelperClass.LeftClickDown();
-                //MouseHelperClass.LeftClickUp();
-
+                //MouseHelperClass.LeftClickUp();                
                 if (this.PerformRecoilCompensation)
                 {
                     MouseHelperClass.MouseMove(dx, dy, sleep);
                 }
+
+
                 /* else if (this.PerformRecoilCompensation != true)
                 {
                     MouseHelperClass.Rapidfire();

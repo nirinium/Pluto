@@ -6,11 +6,15 @@ using System.Windows.Forms;
 using System.Data;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Drawing;
+using LiteDB;
+using static Pluto.Games.BF1.BF1;
 
 namespace PUBG_Mouse_Helper
 {
     public partial class Form1 : Form, IOkButtonPressedInSavePresetDialog, IOnHotkeyPressed
     {
+
         private class Preset
         {
             public Preset(bool isUserDefined, string presetName, int dx, int dy, int waitMs, int delayMs)
@@ -51,7 +55,7 @@ namespace PUBG_Mouse_Helper
 
         private Poller poller;
 
-        private ToolStripMenuItem userPresetsMenuItem;
+        ToolStripMenuItem userPresetsMenuItem;
 
         private int presetSwitchHotkeyIndex = 0;
 
@@ -153,14 +157,14 @@ namespace PUBG_Mouse_Helper
 
         public void OnToggleRecoilCompensationHotkeyPressed()
         {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
+            //SpeechSynthesizer synth = new SpeechSynthesizer();
             toolStripMenuItemEnableAntiRecoil.PerformClick();
             string enabledOrDisabled = toolStripMenuItemEnableAntiRecoil.Checked ? "enable" : "disable";
             string enabledOrDisabledANTI = !toolStripMenuItemEnableAntiRecoil.Checked ? "enable" : "disable";
             //new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
             //new MessageToast($"Recoil compensation {enabledOrDisabled}d.\nPress F7 to {enabledOrDisabledANTI}.", 50).Show();
             //Console.Beep(400, 500);
-             
+
             //if (toolStripMenuItemEnableAntiRecoil.Checked)
             //{
             //    synth.SpeakAsync(trackBar2.Location.ToString());
@@ -169,7 +173,7 @@ namespace PUBG_Mouse_Helper
             //{
             //    synth.SpeakAsync("Off");
             //}
-            
+
         }
 
         public void OnFastLootPressed() //[XButton1]
@@ -181,6 +185,11 @@ namespace PUBG_Mouse_Helper
         {
             MouseHelperClass.Rapidfire();
         }
+        public void OnRapidfireHotkeyPressed()
+        {
+
+            //new MessageToast($"dy = {trackBar2.Value}").Show(); //show a message to user regarding the new dy value
+        }
 
         #endregion Interface methods
 
@@ -188,7 +197,7 @@ namespace PUBG_Mouse_Helper
         {
             if (!this.CurrentPreset.IsEmpty()) //if preset is named
             {
-                this.Text = HelperFunctions.GetApplicationName() + " | Preset | " + this.CurrentPreset.PresetName;
+                this.Text = HelperFunctions.GetApplicationName() + " [Preset:  " + this.CurrentPreset.PresetName + "]";
                 if (!timer1.Enabled) //only allow deleting presets if timer is off i.e. monitoring is stopped
                 {
                     if (this.CurrentPreset.UserDefined)
@@ -222,7 +231,7 @@ namespace PUBG_Mouse_Helper
             this.CurrentPreset = new Preset();
         }
 
-        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        private void toolStripMenuItem9_Click(object sender, EventArgs e) //Activate
         {
             toolStripMenuItemStop.Enabled = true;
             toolStripMenuItemSaveAsPreset.Enabled = false;
@@ -237,6 +246,8 @@ namespace PUBG_Mouse_Helper
             poller.Poll(trackBar1.Value, trackBar2.Value, (uint)trackBar3.Value);
             toolStripStatusLabel1.Text = $"Monitoring Active : (dx={trackBar1.Value}, dy={trackBar2.Value}, WaitMs={trackBar3.Value}, DelayMs={trackBar4.Value})";
             notifyIcon1.Text = toolStripStatusLabel1.Text;
+            //PLUTO FUNCS
+            poller.Poll_ExtraFunctions();
         }
 
         private void toolStripMenuItem10_Click(object sender, EventArgs e)
@@ -253,6 +264,8 @@ namespace PUBG_Mouse_Helper
             toolStripMenuItemStop.Enabled = false;
         }
 
+        //WEAPON VARIABLE FUNCTIONS
+
         //WEAPON PRESETS
         private void toolStripMenuItem2_Click(object sender, EventArgs e) //0 Default
         {
@@ -264,7 +277,7 @@ namespace PUBG_Mouse_Helper
         private void toolStripMenuItem3_Click(object sender, EventArgs e) //AKM
         {
             string presetName = ((ToolStripItem)sender).Text;
-            this.CurrentPreset = new Preset(false, presetName, 0, 20, 2, 6);
+            this.CurrentPreset = new Preset(false, presetName, 0, 9, 2, 6);
             this.presetSwitchHotkeyIndex = 1;
         }
 
@@ -278,7 +291,7 @@ namespace PUBG_Mouse_Helper
         private void toolStripMenuItem5_Click(object sender, EventArgs e) //SKS
         {
             string presetName = ((ToolStripItem)sender).Text;
-            this.CurrentPreset = new Preset(false, presetName, 1, 10, 2, 6);
+            this.CurrentPreset = new Preset(false, presetName, 0, 10, 2, 6);
             this.presetSwitchHotkeyIndex = 3;
         }
 
@@ -292,7 +305,7 @@ namespace PUBG_Mouse_Helper
         private void toolStripMenuItem7_Click(object sender, EventArgs e) //MK14
         {
             string presetName = ((ToolStripItem)sender).Text;
-            this.CurrentPreset = new Preset(false, presetName, 1, 8, 2, 6);
+            this.CurrentPreset = new Preset(false, presetName, 0, 8, 2, 6);
             this.presetSwitchHotkeyIndex = 5;
         }
 
@@ -473,6 +486,43 @@ AUTO_LOOT > XButton1 (Mouse)";
         {
             //Pluto.Testing.MySQLForm mySQLForm = new Pluto.Testing.MySQLForm();
             //mySQLForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            // Open database (or create if not exits)
+            using (var db = new LiteDatabase(@"BF1.db"))
+            {
+                // Get weapon collection
+                var Guns = db.GetCollection<Weapons>("Guns");
+
+                // Create your new customer instance
+                var newWep = new Weapons
+                {
+                    Name = textBox1.Text,
+                    Guns = new string[] { "SMG", "SMG" },
+                    IsActive = true
+                };
+
+                // Insert new customer document (Id will be auto-incremented)
+                Guns.Insert(newWep);
+
+                // Update a document inside a collection
+                newWep.Name = textBox1.Text;
+
+                Guns.Update(newWep);
+
+                // Index document using a document property
+                Guns.EnsureIndex(x => x.Name);
+
+                // Use Linq to query documents
+                var results = Guns.Find(x => x.Name.StartsWith("Jo"));
+            }
         }
     }
 }

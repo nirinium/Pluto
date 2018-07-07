@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Windows.Input;
 
 
 namespace PUBG_Mouse_Helper
@@ -36,7 +37,7 @@ namespace PUBG_Mouse_Helper
         public static void MouseMove(int dx, int dy, uint sleep = 10)
         {
             int stepx, stepy;
-
+            
             stepx = (dx < 0) ?  -1 : 1;
             for (int cnt = 1; cnt <= Math.Abs(dx); cnt++)
             {
@@ -54,9 +55,9 @@ namespace PUBG_Mouse_Helper
 
         public static void FastLoot() // CONTROLLED IN Poller.cs [XButton1]
         {
+            //Add Tab Key check for inventory!
             
-            Console.WriteLine("Fastlooting!");
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 LeftClickUp();
                 LeftClickDown();
@@ -66,22 +67,23 @@ namespace PUBG_Mouse_Helper
                 LeftClickUp();
                 mouse_event(MOUSEEVENTF_MOVE, -600, 0, 0, UIntPtr.Zero);
             }
+            Console.WriteLine("Fastlooting!");
         }
         public static void Rapidfire() // CONTROLLED IN Poller.cs [XButton2]
         {
-            Console.WriteLine("Rapidfire!");
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 int[] x = new int[] { };
                 int[] y = { 1, 1, 2, 2 };
 
                 LeftClickUp();
                 LeftClickDown();
-                Thread.Sleep(2);
+                Thread.Sleep(32);
                 mouse_event(MOUSEEVENTF_MOVE, 0, 0, 0, UIntPtr.Zero);
                 LeftClickUp();
                 //mouse_event(MOUSEEVENTF_MOVE, -600, 0, 0, UIntPtr.Zero);
             }
+            Console.WriteLine("Rapidfire!");
         }
     }
 }

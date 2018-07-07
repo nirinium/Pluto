@@ -482,17 +482,15 @@ AUTO_LOOT > XButton1 (Mouse)";
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Pluto.Testing.MySQLForm mySQLForm = new Pluto.Testing.MySQLForm();
-            //mySQLForm.Show();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
-
+        public class DataBase
+        {
+            [BsonId]
+            public string GetSetVariable { get; set; }
+        }
         private void button2_Click_1(object sender, EventArgs e)
         {
             // Open database (or create if not exits)
@@ -505,7 +503,10 @@ AUTO_LOOT > XButton1 (Mouse)";
                 var newWep = new Weapons
                 {
                     Name = textBox1.Text,
-                    Guns = new string[] { "SMG", "SMG" },
+                    //Guns = new string[] { "SMG", "SMG" },
+                    RecoilX = new string[] { txtRecoilX.Text },
+                    RecoilY = new string[] { txtRecoilY.Text },
+                    GunTypes = comboBox1.SelectedItem.ToString(),
                     IsActive = true
                 };
 

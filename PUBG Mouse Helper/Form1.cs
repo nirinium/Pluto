@@ -486,11 +486,6 @@ AUTO_LOOT > XButton1 (Mouse)";
         {
             
         }
-        public class DataBase
-        {
-            [BsonId]
-            public string GetSetVariable { get; set; }
-        }
         private void button2_Click_1(object sender, EventArgs e)
         {
             // Open database (or create if not exits)
@@ -524,6 +519,16 @@ AUTO_LOOT > XButton1 (Mouse)";
                 // Use Linq to query documents
                 var results = Guns.Find(x => x.Name.StartsWith("Jo"));
             }
+        }
+
+        public void AdvancedRecoilDBDriver()
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
         }
     }
 }

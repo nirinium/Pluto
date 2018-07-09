@@ -14,6 +14,7 @@ namespace PUBG_Mouse_Helper
 
         public bool PerformRecoilCompensation { get; set; } = true;
         public bool PerformRapidfire { get; set; } = true;
+        public bool PerformFastLoot { get; set; } = true;
 
         public void Poll(int dx, int dy, uint sleep)
         {
@@ -59,7 +60,9 @@ namespace PUBG_Mouse_Helper
                 //MouseHelperClass.LeftClickUp();                
                 if (this.PerformRecoilCompensation)
                 {
-                    MouseHelperClass.MouseMove(dx, dy, sleep);
+                    //TESTING
+                    // MouseHelperClass.MouseMove(dx, dy, sleep);
+                    MouseHelperClass.TestAdvancedRecoil(dx, dy, sleep);
                 }
 
 

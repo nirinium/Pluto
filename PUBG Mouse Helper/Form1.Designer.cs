@@ -72,6 +72,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtRecoilX = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtRecoilY = new System.Windows.Forms.TextBox();
@@ -87,7 +88,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
@@ -179,8 +179,7 @@
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(546, 45);
-            this.trackBar1.TabIndex = 1;
-            this.trackBar1.TickFrequency = 2;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label4
             // 
@@ -202,8 +201,6 @@
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(546, 45);
-            this.trackBar2.TabIndex = 1;
-            this.trackBar2.TickFrequency = 2;
             this.trackBar2.Value = 30;
             // 
             // trackBar3
@@ -216,9 +213,7 @@
             this.trackBar3.Minimum = 1;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(546, 45);
-            this.trackBar3.TabIndex = 4;
-            this.trackBar3.TickFrequency = 2;
-            this.trackBar3.Value = 2;
+            this.trackBar3.Value = 4;
             // 
             // label2
             // 
@@ -514,6 +509,19 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Advanced";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "SMG",
+            "LMG",
+            "RIFLE"});
+            this.comboBox1.Location = new System.Drawing.Point(242, 224);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 12;
+            this.comboBox1.Text = "Weapon Type:";
+            // 
             // txtRecoilX
             // 
             this.txtRecoilX.Location = new System.Drawing.Point(91, 163);
@@ -652,19 +660,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Open Admin Panel";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "SMG",
-            "LMG",
-            "RIFLE"});
-            this.comboBox1.Location = new System.Drawing.Point(242, 224);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
-            this.comboBox1.Text = "Weapon Type:";
             // 
             // Form1
             // 

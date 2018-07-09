@@ -38,7 +38,7 @@ namespace Pluto.Login
         private void PingLoginServer()
         {
             Ping myPing = new Ping();
-            PingReply reply = myPing.Send("www.nirinium.com", 100);
+            PingReply reply = myPing.Send("www.google.com", 100);
 
             if (reply != null)
             {

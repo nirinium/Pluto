@@ -15,7 +15,6 @@ namespace Pluto.Games.BF1
             public string Name { get; set; }
             public string[] RecoilX { get; set; }
             public string[] RecoilY { get; set; }
-            public string[] Guns { get; set; }
             public string GunTypes { get; set; }
             public bool IsActive { get; set; }
         }

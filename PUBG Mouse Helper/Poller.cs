@@ -53,16 +53,14 @@ namespace PUBG_Mouse_Helper
         private void PollMButton(int dx, int dy, uint sleep)
         {
             short gaks = GetAsyncKeyState(System.Windows.Forms.Keys.LButton);
-            if ((gaks & 0b10000000_00000000) > 0) //if MSB is set (non-zero) i.e. middle button is being held down
+            if ((gaks & 0b10000000_00000000) > 0) //if MSB is set (non-zero) i.e. left button is being held down
             {
                 //Could add rapidfire here -- have to use KEYBD_EVENT
                 //MouseHelperClass.LeftClickDown();
                 //MouseHelperClass.LeftClickUp();                
                 if (this.PerformRecoilCompensation)
                 {
-                    //TESTING
-                    // MouseHelperClass.MouseMove(dx, dy, sleep);
-                    MouseHelperClass.TestAdvancedRecoil(dx, dy, sleep);
+                    MouseHelperClass.MouseMove(dx, dy, sleep);
                 }
 
 
@@ -77,10 +75,10 @@ namespace PUBG_Mouse_Helper
 
         private void PollPresetChangeHotkey()
         {
-            short gaks = GetAsyncKeyState(Keys.Enter);
+            short gaks = GetAsyncKeyState(Keys.NumPad9);
             if ((gaks & 0b10000000_00000000) > 0) //if Enter was pressed and held
             {
-                HelperFunctions.WaitUntilTimeoutWhileTrue(() => (GetAsyncKeyState(Keys.Enter) & 0b10000000_00000000) > 0, 100); //wait until Enter is released without timeout of 100ms
+                HelperFunctions.WaitUntilTimeoutWhileTrue(() => (GetAsyncKeyState(Keys.NumPad9) & 0b10000000_00000000) > 0, 100); //wait until Enter is released without timeout of 100ms
                 this.onHotkeyPressed.OnPresetSwitchHotkeyPressed();
             }
         }

@@ -270,7 +270,7 @@ namespace PUBG_Mouse_Helper
         private void toolStripMenuItem2_Click(object sender, EventArgs e) //0 Default
         {
             string presetName = ((ToolStripItem)sender).Text;
-            this.CurrentPreset = new Preset(false, presetName, 0, 0, 2, 6);
+            this.CurrentPreset = new Preset(false, presetName, 0, 2, 2, 6);
             this.presetSwitchHotkeyIndex = 0;
         }
 

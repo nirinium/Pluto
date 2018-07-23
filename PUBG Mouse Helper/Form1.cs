@@ -530,5 +530,10 @@ AUTO_LOOT > XButton1 (Mouse)";
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Input;
-using LiteDB;
 using Pluto.Games.BF1;
 
 namespace PUBG_Mouse_Helper
@@ -40,6 +39,7 @@ namespace PUBG_Mouse_Helper
             int stepx, stepy;
 
             stepx = (dx < 0) ? -1 : 1;
+
             for (int cnt = 1; cnt <= Math.Abs(dx); cnt++)
             {
                 mouse_event(MOUSEEVENTF_MOVE, stepx, 0, 0, UIntPtr.Zero);
@@ -74,29 +74,19 @@ namespace PUBG_Mouse_Helper
         {
             for (int i = 0; i < 1; i++)
             {
-                int[] x = new int[] { };
-                int[] y = { 1, 1, 2, 2 };
-
                 LeftClickUp();
                 LeftClickDown();
                 Thread.Sleep(32);
-                mouse_event(MOUSEEVENTF_MOVE, 0, 0, 0, UIntPtr.Zero);
+                mouse_event(MOUSEEVENTF_MOVE, 0, 0, dwData: 0, dwExtraInfo: UIntPtr.Zero);
                 LeftClickUp();
                 //mouse_event(MOUSEEVENTF_MOVE, -600, 0, 0, UIntPtr.Zero);
             }
             Console.WriteLine("Rapidfire!");
         }
-        public static void TestAdvancedRecoil(int dx, int dy, uint sleep = 10)
+
+        private static void mouse_event(uint mOUSEEVENTF_MOVE, int[] rfX, int v, int dwData, UIntPtr dwExtraInfo)
         {
-            int stepx, stepy;
-
-            stepy = dy;
-            for(int cnt = 0; cnt < 1; cnt++)
-            {
-                mouse_event(MOUSEEVENTF_MOVE, 0, stepy, 0, UIntPtr.Zero);
-                Thread.Sleep(32);
-            }
-
+            throw new NotImplementedException();
         }
     }
 }

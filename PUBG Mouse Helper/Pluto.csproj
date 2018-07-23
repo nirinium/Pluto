@@ -118,6 +118,7 @@
       <DependentUpon>GraphMain.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperFunctions.cs" />
+    <Compile Include="Interfaces\IDebugCheck.cs" />
     <Compile Include="IOkButtonPressedPresetDialog.cs" />
     <Compile Include="IOnHotkeyPressed.cs" />
     <Compile Include="Login\LoginForm.cs">

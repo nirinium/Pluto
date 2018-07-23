@@ -88,6 +88,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
@@ -112,7 +113,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(626, 419);
+            this.panel1.Size = new System.Drawing.Size(656, 389);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
@@ -129,7 +130,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(626, 397);
+            this.groupBox2.Size = new System.Drawing.Size(656, 367);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recoil Control Settings";
@@ -165,7 +166,7 @@
             this.trackBar4.Maximum = 1000;
             this.trackBar4.Minimum = 6;
             this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(546, 45);
+            this.trackBar4.Size = new System.Drawing.Size(576, 45);
             this.trackBar4.TabIndex = 6;
             this.trackBar4.TickFrequency = 10;
             this.trackBar4.Value = 6;
@@ -178,7 +179,8 @@
             this.trackBar1.Location = new System.Drawing.Point(71, 25);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(546, 45);
+            this.trackBar1.Size = new System.Drawing.Size(576, 45);
+            this.trackBar1.TabIndex = 7;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label4
@@ -200,7 +202,8 @@
             this.trackBar2.Location = new System.Drawing.Point(71, 69);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(546, 45);
+            this.trackBar2.Size = new System.Drawing.Size(576, 45);
+            this.trackBar2.TabIndex = 8;
             this.trackBar2.Value = 30;
             // 
             // trackBar3
@@ -212,7 +215,8 @@
             this.trackBar3.Maximum = 100;
             this.trackBar3.Minimum = 1;
             this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(546, 45);
+            this.trackBar3.Size = new System.Drawing.Size(576, 45);
+            this.trackBar3.TabIndex = 9;
             this.trackBar3.Value = 4;
             // 
             // label2
@@ -229,9 +233,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 397);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 367);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(626, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(656, 22);
             this.statusStrip1.TabIndex = 8;
             // 
             // toolStripStatusLabel1
@@ -461,7 +465,6 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -481,10 +484,10 @@
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(34, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(636, 429);
+            this.tabPage1.Size = new System.Drawing.Size(666, 399);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic";
             // 
@@ -492,6 +495,7 @@
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.comboBox1);
             this.tabPage4.Controls.Add(this.txtRecoilX);
             this.tabPage4.Controls.Add(this.label10);
@@ -503,9 +507,9 @@
             this.tabPage4.Controls.Add(this.listBox1);
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Location = new System.Drawing.Point(34, 4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(636, 429);
+            this.tabPage4.Size = new System.Drawing.Size(666, 399);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Advanced";
             // 
@@ -612,10 +616,10 @@
             // 
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Location = new System.Drawing.Point(34, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(636, 429);
+            this.tabPage2.Size = new System.Drawing.Size(666, 399);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Graphing";
             // 
@@ -635,9 +639,9 @@
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Location = new System.Drawing.Point(34, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(636, 429);
+            this.tabPage3.Size = new System.Drawing.Size(666, 399);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Admin";
             // 
@@ -660,6 +664,16 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Open Admin Panel";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(231, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Load All Presets";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -765,6 +779,7 @@
         private System.Windows.Forms.TextBox txtRecoilY;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button4;
     }
 }
 
